@@ -1,5 +1,3 @@
 import React from 'react';
-
-export default function Hello(props){
-  return <>{props.children}</>;
-}
+const Titulo = ({text}) => <h1>{text}</h1>;
+export default Titulo; 

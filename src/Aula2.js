@@ -1,0 +1,22 @@
+import React, {useState, useEffect} from 'react';
+
+export default function Aula2() {
+    
+    const [nome, setNome] = useState(undefined);
+   useEffect(
+       () => {
+           if (nome === undefined) {
+            sessionStorage.getItem('nome');
+           }else{
+               sessionStorage.setItem('nome', nome);
+           }
+       }, [nome]
+       );
+    return (
+        <>
+        Nome: <input type="text" value={nome} onChange={(event)=>setNome(event.target.value)}></input>
+        <br/>
+        Olá {nome}
+        </>
+    );
+}
